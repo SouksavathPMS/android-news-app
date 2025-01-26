@@ -1,7 +1,7 @@
 package com.kelineyt.newsapp.data.model
 
 data class News(
-    val authors: List<String>,
+    val authors: List<String>?,
     val category: String,
     val id: Int,
     val image: String,
