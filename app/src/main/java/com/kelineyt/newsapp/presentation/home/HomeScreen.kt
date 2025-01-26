@@ -99,10 +99,11 @@ fun HomeScreen() {
 fun NewsItem(news: News) {
     Box(
         modifier = Modifier
-            .padding(8.dp)
+            .padding(vertical = 4.dp)
             .fillMaxWidth()
             .height(130.dp)
             .clip(RoundedCornerShape(16.dp))
+            .background(Color.Red.copy(alpha = 0.2f))
     ) {
         // Background Image
         AsyncImage(
@@ -168,13 +169,15 @@ fun SearchBar(text: String, onSearch: (String) -> Unit) {
             label = {
                 Text("Search")
             },
-            shape = RoundedCornerShape(16.dp)
+            shape = RoundedCornerShape(24.dp),
+            modifier = Modifier.fillMaxWidth(),
+            maxLines = 1
         )
 
         Image(
             painter = painterResource(id = android.R.drawable.ic_menu_search),
             contentDescription = null,
-            modifier = Modifier.align(Alignment.CenterEnd)
+            modifier = Modifier.padding(end = 16.dp).align(Alignment.CenterEnd)
         )
     }
 }
